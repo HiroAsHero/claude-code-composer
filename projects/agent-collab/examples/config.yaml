@@ -1,0 +1,67 @@
+# Example configuration for Agent Collaboration Framework
+
+agents:
+  developer:
+    role: "code_implementation"
+    max_parallel_tasks: 3
+    timeout: 300
+    retry_count: 2
+    port: 8001
+  qa:
+    role: "quality_assurance"
+    max_parallel_tasks: 2
+    timeout: 180
+    retry_count: 1
+    port: 8002
+  designer:
+    role: "ui_ux_design"
+    max_parallel_tasks: 2
+    timeout: 240
+    retry_count: 1
+    port: 8003
+  architect:
+    role: "system_architecture"
+    max_parallel_tasks: 1
+    timeout: 400
+    retry_count: 2
+    port: 8004
+
+task_types:
+  requirements_analysis:
+    agent: "architect"
+    priority: 1
+    dependencies: []
+  architecture_design:
+    agent: "architect"
+    priority: 2
+    dependencies: ["requirements_analysis"]
+  ui_design:
+    agent: "designer"
+    priority: 3
+    dependencies: ["requirements_analysis"]
+  code_implementation:
+    agent: "developer"
+    priority: 4
+    dependencies: ["architecture_design"]
+  unit_testing:
+    agent: "qa"
+    priority: 5
+    dependencies: ["code_implementation"]
+  integration_testing:
+    agent: "qa"
+    priority: 6
+    dependencies: ["unit_testing"]
+  system_testing:
+    agent: "qa"
+    priority: 7
+    dependencies: ["integration_testing"]
+  documentation:
+    agent: "developer"
+    priority: 8
+    dependencies: ["system_testing"]
+
+system:
+  workspace: "./workspace"
+  log_level: "INFO"
+  timeout: 3600
+  composer_port: 8000
