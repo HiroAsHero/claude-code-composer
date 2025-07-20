@@ -1,0 +1,22 @@
+{
+    "name": "claude-code-composer",
+    "version": "1.0.0",
+    "description": "claude code agents composer",
+    "main": "index.js",
+    "type": "module",
+    "bin": {
+      "claude-code-composer": "./bin/cli.js"
+    },
+    "scripts": {
+      "postinstall": "node postinstall.js"
+    },
+    "keywords": ["claude", "claude-code", "composer", "commands"],
+    "author": "Your Name",
+    "license": "MIT",
+    "files": [
+      "index.js",
+      "postinstall.js",
+      "bin/",
+      "templates/"
+    ]
+  }
