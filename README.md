@@ -1,30 +1,34 @@
-# Claude Composer Command
+# Claude Composer
+This package adds Claude code commands `/composer` and will enable you composing multiple agents simultanously.
 
-This package adds a `composer` command to your Claude Code environment by creating a `composer.md` file in the `.claude/commands` directory.
+## Quick start
+```
+npm i claude-code-composer
+claude
+/composer 'ex:create memo app'
+```
 
 ## Installation
 
-\`\`\`bash
-npm install claude-composer-command
-\`\`\`
+```
+npm i claude-code-composer
+```
 
 The command will be automatically installed in your `.claude/commands` directory during the post-install process.
 
 ## Manual Installation
 
 If you need to reinstall or install in a different project:
-
-\`\`\`bash
+```
 npx claude-composer install
-\`\`\`
+```
 
 ## What it creates
-
 - `.claude/commands/composer.md` - The command documentation and specification
 
 ## Usage in Claude Code
 
-After installation, you can use the `composer` command in Claude Code:
+After installation, you can use the `/composer` command in Claude Code:
 
 \`\`\`
 composer init
