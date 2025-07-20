@@ -1,6 +1,6 @@
 {
   "name": "claude-code-composer",
-  "version": "1.0.2",
+  "version": "1.0.5",
   "description": "Claude Code command for creating composer.md files",
   "main": "index.js",
   "type": "module",

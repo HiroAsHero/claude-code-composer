@@ -1,6 +1,9 @@
 # Claude Composer
 This package adds Claude code commands `/composer` and will enable you composing multiple agents simultanously.
 
+## Precautions
+Only tested on MacOS, Linux OS. Windows WSL2 support implementation is in progress.
+
 ## Quick start
 ```
 npm i claude-code-composer
@@ -39,3 +42,7 @@ composer deploy --dry-run
 ## Customization
 
 You can edit the `.claude/commands/composer.md` file to customize the command behavior and documentation according to your project needs.
+
+## Github repository
+https://github.com/HiroAsHero/claude-code-composer
+
